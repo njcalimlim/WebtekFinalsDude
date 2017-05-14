@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Welcome Admin</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu alert-dropdown">
+                        <li>
+                            <a href="#">Christine De Alban would like to tutor Bass <span class="label label-info">View Info</span></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="notifications.html">
+                                <strong>View All Request</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="service-providers.html"><i class="fa fa-table fa-fw"></i>Service Providers</a>
+                        </li>
+                         <li>
+                            <a href="customers.html"><i class="fa fa-table fa-fw"></i>Customers</a>
+                        </li>
+                        <li class="active">
+                            <a href="notifications.html"><i class="fa fa-wrench fa-fw"></i> Requests<span class="fa arrow"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Requests</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            List of Request 
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>Confirmation</th>
+                                        <th>Service Provider ID</th>
+                                        <th>Lastname</th>
+                                        <th>Firstname</th>
+                                        <th>Birthdate</th>
+                                        <th>Contact No.</th>
+                                        <th>E-mail Address</th>
+                                        <th>Address</th>
+                                        <th>Type of Service</th>
+                                        <th>Field</th>
+                                        <th>Username</th>
+                                        <th>Password</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><button type="button" class="btn btn-outline btn-primary" data-toggle="modal" data-target="#myModal">Accept</button></td>
+                                        <td>1006</td>
+                                        <td>De Alban</td>
+                                        <td>Christine</td>
+                                        <td>May 6, 2017</td>
+                                        <td>09234145134</td>
+                                        <td>jorgia@gmail.com</td>
+                                        <td>12 Aurora Hill</td>
+                                        <td>Cooking or Baking</td>
+                                        <td>Cooking</td>
+                                        <td>jorgia</td>
+                                        <td>asdf</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            
+
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to accept Jorgia De Alban?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-primary">Yes Please </button>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal -->
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+    </div>
+    <!-- /#wrapper -->
+    
+    <!-- jQuery -->
+   <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <!-- Page-Level Demo Scripts - Notifications - Use for reference -->
+    <script>
+    // tooltip demo
+    $('.tooltip-demo').tooltip({
+        selector: "[data-toggle=tooltip]",
+        container: "body"
+    })
+    // popover demo
+    $("[data-toggle=popover]")
+        .popover()
+    </script>
+    
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
+
+</body>
+
+</html>
