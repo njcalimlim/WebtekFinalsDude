@@ -3,6 +3,39 @@
 
 class Auth extends CI_Controller
 {
+	
+	function __construct(){
+		parent::__construct();
+	}
+	
+	public function index()
+	{
+		$this->load->view('login');
+	}
+
+    public function doLogin()
+    {
+        
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+
+        $user = $this->Auth_model->doLogin($username, $password);
+        if(count($user) > 0)
+        {
+            if($user[0]['type'] == 'customer'){
+                redirect('http://192.168.1.68:8084/serviceprovider/AcceptLogin?id='.$user[0]['id'], 'refresh');
+
+            }
+
+            if($user[0]['type'] == 'sp'){
+                header('Location: ');
+                exit();
+            }
+        }
+        redirect('/');
+    }
+
+
     public function login()
     {
         
@@ -21,24 +54,25 @@ class Auth extends CI_Controller
             
             $user = $query->row();
             // if user exist
-            if($user->email){
+            if($user->cuID){
                 //temporary message
                 $this->session->set_flashdata("success", "You are logged in");
                 
                 // set session variables
                 
+                $this->session->set_userdata('cuID', $user->cuID);
                 $_SESSION['user_logged'] = TRUE;
                 $_SESSION['UsernameC'] = $user->UsernameC;
                 
                 // redirect to profile page
-                redirect ("user/profile", "refresh");
+//                redirect ("user/profile", "refresh");
                 
             }else {
                 $this->session->set_flashdata("error", "account does not exists, please register.");
-                redirect ("user/login", "refresh");
+//                redirect ("user/login", "refresh");
             }
         }
-        $this->load->view('login');
+//        $this->load->view('login');
     }
     public function register()
     {

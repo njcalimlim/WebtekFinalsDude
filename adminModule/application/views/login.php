@@ -29,14 +29,14 @@
           } ?>
           <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
           
-          <form action="" method="POST">
+          <form action="<?php echo base_url(); ?>login" method="POST">
               <div class="form-group">
                   <label for="UsernameC">Username:</label>
-                  <input class="form-control" name="UsernameC" id="UsernameC" type="text">
+                  <input class="form-control" name="username" id="UsernameC" type="text">
               </div>
               <div class="form-group">
                   <label for="PasswordC">Password:</label>
-                  <input class="form-control" name="Password" id="PasswordC" type="password">
+                  <input class="form-control" name="password" id="PasswordC" type="password">
               </div>
               <div class="text-center">
                   <button class="btn btn-primary" name="login">Login</button>
