@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Service Providers</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -92,13 +92,13 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="<?php echo base_url(); ?>dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
-                        <li class="active">
-                            <a href="service-providers.html"><i class="fa fa-table fa-fw"></i>Service Providers</a>
+                        <li>
+                            <a href="<?php echo base_url(); ?>serviceprovider"><i class="fa fa-table fa-fw"></i>Service Providers</a>
                         </li>
-                         <li>
-                            <a href="customers.html"><i class="fa fa-table fa-fw"></i>Customers</a>
+                         <li class="active">
+                            <a href="<?php echo base_url(); ?>customer"><i class="fa fa-table fa-fw"></i>Customers</a>
                         </li>
                         <li>
                             <a href="notifications.html"><i class="fa fa-wrench fa-fw"></i> Requests<span class="fa arrow"></span></a>
