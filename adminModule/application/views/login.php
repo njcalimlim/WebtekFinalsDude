@@ -20,7 +20,7 @@
   <body>
       
       <div class="col-lg-5 col-lg-offset-2">
-        <h1>Ready for Login?</h1>
+        <h1>Login:</h1>
         <p>Fill in the details to login on our website!</p>
           
           <?php if(isset($_SESSION['success'])){ ?>
@@ -40,6 +40,10 @@
               </div>
               <div class="text-center">
                   <button class="btn btn-primary" name="login">Login</button>
+              </div>
+              <br>
+              <div class="text-center">
+                  <p><a href="<?php echo base_url(); ?>register">Create an account?</a></p>
               </div>
       </form>
       </div>

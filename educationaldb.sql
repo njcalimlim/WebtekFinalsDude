@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2017 at 11:52 PM
+-- Generation Time: May 15, 2017 at 09:40 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -79,8 +79,10 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`cuID`, `Image`, `UserName`, `FirstName`, `LastName`, `ContactNumber`, `Password`, `Email`, `Address`, `Birthdate`) VALUES
-(1, '', 'username', 'Warlick', 'Verlene', '2147483647', 'password', 'email@email.cm', 'Baguio City', '2017-05-16'),
-(2, '', 'sagada', 'Kevin James', 'Dilem', '8888888', 'sagada', 'kevinjames@gmail.com', 'Sagada, Mt. Province', '2017-05-16');
+(11, '', 'Wan', 'Juan', 'Cruz', '09786543455', '827ccb0eea8a706c4c34a16891f84e7b', 'wan@outlook.com', '#25 Leonila Hill, Baguio CIty', '1998-05-11'),
+(12, '', 'Lila', 'Mariella', 'Fern', '09887889879', 'cfe53f93c6e9817fbe292bbf20ed6e9c', 'lal@yahoo.com', '#19 Loakan, Baguio City', '1972-05-23'),
+(13, '', 'Abo', 'Averey', 'Mas', '09897711278', '58abe46d24b3b48884e4e019d70bdf0f', 'abo@google.com', '#289 Quirino, Baguio City', '1989-05-20'),
+(14, '', 'John', 'Jin', 'Dulse', '09678811876', 'eca8a799a8b0306fca0200fbdf8d3e15', 'dulse@gmail.com', '#1 Bonifacio Rd., Baguio City', '1980-03-22');
 
 -- --------------------------------------------------------
 
@@ -134,14 +136,9 @@ CREATE TABLE `service_provider` (
 --
 
 INSERT INTO `service_provider` (`spID`, `Username`, `FirstName`, `LastName`, `ContactNumber`, `Password`, `Service`, `Category`, `Email`, `Address`, `Birthdate`) VALUES
-(1, 'user1', 'Altha', 'Seyler', '09999999', 'pass1', 'service 1', 'math', 'email@email.cm', 'Baguio City', '2017-05-16'),
-(2, 'service1', 'service provider 1', 'service', '09324324', 'service1', 'service 2', 'math', 'email@email.cm', 'Baguio City', '2017-05-18'),
-(3, 'usere1', 'fne1', 'lne1', '091232343', 'passe1', 'English 1', 'english', 'e1@email.com', 'Baguio City', 'today'),
-(4, 'usere2', 'fne2', 'lne2', '091232343', 'passe2', 'English 2', 'english', 'e2@email.com', 'Baguio City', 'TOday'),
-(5, 'users1', 'fns1', 'lns1', '019233243', 'passs1', 'Science 1', 'science', 's1@email.com', 'Baguio City', 'Today'),
-(6, 'users2', 'fns2', 'lns2', '0923445', 'passs2', 'Science 2', 'science', 's2@email.com', 'Baguio City', 'today'),
-(7, 'userss1', 'fnss1', 'lnss1', '0234934573', 'passs1', 'Social Studies 1', 'socialstudies', 'ss2@email.com', 'Baguio City', 'Today'),
-(8, 'userss2', 'fnss2', 'lnss2', '09344757634', 'passs2', 'Social Studies 2', 'socialstudies', 'ss2@email.com', 'Baguio City', 'Today');
+(11, 'Nat', 'Nathan', 'Calims', '09678876543', '1404834e52a4c6cac9444f1fb3c62d3c', 'English subject tutorial', '', 'nat@yahoo.com', '#123 Trancoville, Baguio City', '1991-05-24'),
+(12, 'Mel', 'Mel', 'Mel', '09778654567', '983346d65de8c114c6c8c9019ceac78b', 'Cheese Cake tutorial', '', 'mel@google.com', '#67 Bakakeng, Baguio City', '1990-05-26'),
+(13, 'Sada', 'Qeu', 'Sada', '09345547789', '827ccb0eea8a706c4c34a16891f84e7b', 'Gong tutotial', '', 'que@gmail.com', '#345 Navy Base, Baguio City', '1992-02-23');
 
 --
 -- Indexes for dumped tables
@@ -188,7 +185,7 @@ ALTER TABLE `service_provider`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `cuID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cuID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `request`
 --
@@ -198,7 +195,7 @@ ALTER TABLE `request`
 -- AUTO_INCREMENT for table `service_provider`
 --
 ALTER TABLE `service_provider`
-  MODIFY `spID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `spID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

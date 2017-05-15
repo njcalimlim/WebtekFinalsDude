@@ -130,67 +130,33 @@
                                 <thead>
                                     <tr>
                                         <th>Customer ID</th>
-                                        <th>Lastname</th>
+                                        <th>Username</th>
                                         <th>Firstname</th>
-                                        <th>Birthdate</th>
+                                        <th>Lastname</th>
                                         <th>Contact no.</th>
                                         <th>E-mail Address</th>
+                                        <th>Birthdate</th>
                                         <th>Address</th>
-                                        <th>Username</th>
                                         <th>Password</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>0001</td>
-                                        <td>Cags</td>
-                                        <td>Tin</td>
-                                        <td>September 15, 1997</td>
-                                        <td>09090044123</td> <td>Tin@gmail.com</td>
-                                        <td>12 Ambiong</td>
-                                        <td>Tinz</td>
-                                        <td>1234</td>
-                                    </tr>
-                                    <tr>
-                                        <td>0002</td>
-                                        <td>Duls</td>
-                                        <td>Jin</td>
-                                        <td>September 30, 1998</td>
-                                        <td>09098765432</td> <td>Jin@gmail.com</td>
-                                        <td>198 San Carlos</td>
-                                        <td>Jinz</td>
-                                        <td>0987</td>
-                                    </tr>
-                                    <tr>
-                                        <td>0003</td>
-                                        <td>Ri</td>
-                                        <td>Avi</td>
-                                        <td>October 20, 1997</td>
-                                        <td>09098778651</td> <td>Aviri@gmail.com</td>
-                                        <td>123 Bonifacio St.</td>
-                                        <td>Aviz</td>
-                                        <td>asdf</td>
-                                    </tr>
-                                    <tr>
-                                        <td>0004</td>
-                                        <td>Pangs</td>
-                                        <td>Lila</td>
-                                        <td>August 25, 1997</td>
-                                        <td>09313435342</td> <td>Lila@gmail.com</td>
-                                        <td>Green Valley</td>
-                                        <td>Lilaz</td>
-                                        <td>poiu</td>
-                                    </tr>
-                                    <tr>
-                                        <td>0005</td>
-                                        <td>Calms</td>
-                                        <td>Nath</td>
-                                        <td>February 15, 1997</td>
-                                        <td>093456768649</td> <td>Naths@gmail.com</td>
-                                        <td>Tuba</td>
-                                        <td>Nathz</td>
-                                        <td>rz12</td>
-                                    </tr>
+                                    <?php
+                                        foreach($records AS $key => $value)
+                                        {?>
+                                            <tr>
+                                                <td><?php echo $value->cuID; ?></td>
+                                                <td><?php echo $value-> UserName; ?></td>
+                                                <td><?php echo $value-> FirstName; ?></td>
+                                                <td><?php echo $value-> LastName; ?></td>
+                                                <td><?php echo $value-> ContactNumber; ?></td>
+                                                <td><?php echo $value-> Email; ?></td>
+                                                <td><?php echo $value-> Birthdate; ?></td>
+                                                <td><?php echo $value-> Address; ?></td>
+                                                <td><?php echo $value-> Password; ?></td>
+                                            </tr>
+                                        <?php } ?>
+                                   
                                 </tbody>
                             </table>
                         </div>

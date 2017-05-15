@@ -3,15 +3,15 @@
 
 class Auth extends CI_Controller
 {
-	
-	function __construct(){
-		parent::__construct();
-	}
-	
-	public function index()
-	{
-		$this->load->view('login');
-	}
+    
+    function __construct(){
+        parent::__construct();
+    }
+    
+    public function index()
+    {   
+        $this->load->view('login');
+    }
 
     public function doLogin()
     {
@@ -23,13 +23,13 @@ class Auth extends CI_Controller
         if(count($user) > 0)
         {
             if($user[0]['type'] == 'customer'){
-                redirect('http://192.168.1.68:8084/serviceprovider/AcceptLogin?id='.$user[0]['id'], 'refresh');
+                redirect('http://192.168.0.151:8084/serviceprovider/AcceptLogin?id='.$user[0]['id'], 'refresh');
 
             }
 
             if($user[0]['type'] == 'sp'){
-                header('Location: ');
-                exit();
+                redirect('http://192.168.0.151:8084/serviceprovider/AcceptLogin?id='.$user[0]['id'], 'refresh');
+                
             }
         }
         redirect('/');
@@ -39,17 +39,17 @@ class Auth extends CI_Controller
     public function login()
     {
         
-        $this->form_validation->set_rules('UsernameC', 'Username', 'required');
+        $this->form_validation->set_rules('UserName', 'Username', 'required');
         $this->form_validation->set_rules('Password', 'Password', 'required|min_length[5]');
         if ($this->form_validation->run() == TRUE) {
             
-            $UsernameC = $_POST['UsernameC'];
-            $Password = md5($_POST['PasswordC']);
+            $UserName = $_POST['UserName'];
+            $Password = md5($_POST['Password']);
             
             //check user in database
             $this->db->select('*');
-            $this->db->from('customers');
-            $this->db->where(array('UsernameC'=>$UsernameC, 'PasswordC' =>$PasswordC));
+            $this->db->from('customer');
+            $this->db->where(array('UserName'=>$UserName, 'Password' =>$Password));
             $query = $this->db->get();
             
             $user = $query->row();
@@ -62,7 +62,7 @@ class Auth extends CI_Controller
                 
                 $this->session->set_userdata('cuID', $user->cuID);
                 $_SESSION['user_logged'] = TRUE;
-                $_SESSION['UsernameC'] = $user->UsernameC;
+                $_SESSION['UserName'] = $user->UserName;
                 
                 // redirect to profile page
 //                redirect ("user/profile", "refresh");
@@ -77,15 +77,18 @@ class Auth extends CI_Controller
     public function register()
     {
         if (isset ($_POST['register'])){
-            $this->form_validation->set_rules('UsernameC', 'Username', 'required');
-            $this->form_validation->set_rules('FirstnameC', 'Firstname', 'required');
-            $this->form_validation->set_rules('LastnameC', 'Lastname', 'required');
+            $this->form_validation->set_rules('UserName', 'Username', 'required');
+            $this->form_validation->set_rules('FirstName', 'Firstname', 'required');
+            $this->form_validation->set_rules('LastName', 'Lastname', 'required');
+            $this->form_validation->set_rules('type', 'type');
+            $this->form_validation->set_rules('Category', 'Category');
+            $this->form_validation->set_rules('Service', 'Service');
             $this->form_validation->set_rules('Birthdate', 'Birthdate', 'required');
-            $this->form_validation->set_rules('EmailC', 'E-mail', 'required');
-            $this->form_validation->set_rules('ContactC', 'Contact', 'required');
-            $this->form_validation->set_rules('AddressC', 'Contact', 'required');
-            $this->form_validation->set_rules('Password', 'Password', 'required|min_length[5]');
-            $this->form_validation->set_rules('PasswordC', 'Confirm Password', 'required|min_length[5]|matches[Password]');
+            $this->form_validation->set_rules('Email', 'E-mail', 'required');
+            $this->form_validation->set_rules('ContactNumber', 'Contact', 'required');
+            $this->form_validation->set_rules('Address', 'Contact', 'required');
+            $this->form_validation->set_rules('PasswordC', 'Password', 'required|min_length[5]');
+            $this->form_validation->set_rules('Password', 'Confirm Password', 'required|min_length[5]|matches[PasswordC]');
 
 
             
@@ -93,19 +96,46 @@ class Auth extends CI_Controller
             if ($this->form_validation->run() == TRUE) {
                // echo 'form validated';
                 
+                $type = $this->input->post('type');
+
+                if($type === 'sp')
+                {
+                    $data = array (
+                 //   $a => $_POST['cuID'],
+                    'UserName' => $_POST['UserName'],
+                    'FirstName' => $_POST['FirstName'],
+                    'LastName' => $_POST['LastName'],
+                    'Birthdate' => $_POST['Birthdate'],
+                    'Email' => $_POST['Email'],
+                    'ContactNumber' => $_POST['ContactNumber'],
+                    'Address' => $_POST['Address'],
+                    'Password' => md5($_POST['Password']),
+                    'Category' => $_POST['Category'],
+                    'Service' => $_POST['Service']
+                    );
+                    $this->db->insert('service_provider',$data);
+                  
+
+
+                }
+
+
+                if($type === 'customer')
+                {
                 //add customer in database
                 $data = array (
                  //   $a => $_POST['cuID'],
-                    'UsernameC' => $_POST['UsernameC'],
-                    'FirstnameC' => $_POST['FirstnameC'],
-                    'LastnameC' => $_POST['LastnameC'],
+                    'UserName' => $_POST['UserName'],
+                    'FirstName' => $_POST['FirstName'],
+                    'LastName' => $_POST['LastName'],
                     'Birthdate' => $_POST['Birthdate'],
-                    'EmailC' => $_POST['EmailC'],
-                    'ContactC' => $_POST['ContactC'],
-                    'AddressC' => $_POST['AddressC'],
-                    'PasswordC' => md5($_POST['PasswordC'])
+                    'Email' => $_POST['Email'],
+                    'ContactNumber' => $_POST['ContactNumber'],
+                    'Address' => $_POST['Address'],
+                    'Password' => md5($_POST['Password'])
                 );                
-                $this->db->insert('customers',$data);
+                $this->db->insert('customer',$data);
+            }
                 
                 $this->session->set_flashdata("success","Your account has been registered. You can login now");
                 redirect ("auth/register", "refresh");
@@ -114,5 +144,15 @@ class Auth extends CI_Controller
         }
         //load view
         $this->load->view('register');
+    }
+
+    public function customers(){
+        $records = $this->Customer->getCustomers();
+        $this->load->view('customers', ['records' => $records]);
+    }
+
+    public function serviceprovider(){
+         $record = $this->ServP->getServP();
+        $this->load->view('service_providers', ['record' => $record]);
     }
 }

@@ -1,0 +1,7 @@
+1) Dashboard+Service Providers+Customers+Request PAGES must be linked to each other.
+2) Login and Logout of the ADMIN is NOT yet functional.
+3) Notfication is NOT yet functional.
+4) Acivate/deactivate of users are NOT yet functional.
+5) DASHBOARD page does not contain anything yet.
+
+!!PLEASE DO SOMETHING!!
